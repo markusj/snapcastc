@@ -166,7 +166,7 @@ bool intercom_handle_server_operation(intercom_ctx *ctx, intercom_packet_sop *pa
 			case CLIENT_VOLUME:;
 				uint8_t volume;
 				currentoffset += parse_volume(packetpointer, &volume);
-				log_error("handling volume change to %d %%\n", volume);
+				log_debug("handling volume change to %d %%\n", volume);
 				adjustVolume(&snapctx.alsaplayer_ctx, volume);
 				break;
 			default:
